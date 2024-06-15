@@ -59,9 +59,9 @@ export default function Home() {
       <div className="relative mb-4">
         <input
           id="symptoms"
-          type="text"
+          type="text" 
           placeholder="Describe your symptoms"
-          className="w-full p-4 text-lg text-white border-4 bg-transparent border-blue-800 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 pr-16"
+          className="w-full p-4 text-lg text-white border-4 bg-transparent border-blue-800 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 pl-8"
           value={symptoms}
           onChange={(e) => setSymptoms(e.target.value)}
           onKeyPress={handleKeyPress}
@@ -96,29 +96,37 @@ export default function Home() {
         ))}
       </div>
       <div className="relative mb-4">
-        <input
-          id="zipCode"
-          type="text"
-          placeholder="Zip Code"
-          className="w-1/2 p-4 text-lg text-white border-4 bg-transparent border-blue-800 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 pr-16"
-          value={zipCode}
-          onChange={(e) => setZipCode(e.target.value)}
-        />
-        <div className="absolute inset-y-0 left-60 flex items-center pr-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-blue-500 bg-blue-800 rounded-full p-1"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-      </div>
+        <div className="flex justify-between items-center">
+
+  <input
+    id="zipCode"
+    type="text"
+    placeholder="Zip Code"
+    className="w-1/4 p-4 text-lg text-white border-4 bg-transparent border-blue-800 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 pl-8"
+    value={zipCode}
+    onChange={(e) => setZipCode(e.target.value)}
+  >
+    
+  </input>
+  <div className="absolute inset-y-0 left-[16rem] flex items-center pr-6">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-8 w-8 text-blue-500 bg-blue-800 rounded-full p-1"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  </div>
+</div>
+  </div>
+        
+  
+  
       <div className="flex justify-start">
         <button
           type="submit"
