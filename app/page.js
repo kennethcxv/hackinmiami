@@ -1,32 +1,19 @@
 "use client";
-import Head from 'next/head';
-import { useState } from 'react';
-import Image from 'next/image';
+import Head from "next/head";
+import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
-  const [symptoms, setSymptoms] = useState('');
+  const [symptoms, setSymptoms] = useState("");
   const [symptomList, setSymptomList] = useState([]);
   const [estimatedCost, setEstimatedCost] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch('/api/estimate-cost', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ symptoms: symptomList.join(', ') }),
-    });
-    const data = await response.json();
-    setEstimatedCost(data.estimatedCost);
-  };
-
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' || e.key === '+') {
+    if (e.key === "Enter" || e.key === "+") {
       e.preventDefault();
-      if (symptoms.trim() !== '') {
+      if (symptoms.trim() !== "") {
         setSymptomList([...symptomList, symptoms.trim()]);
-        setSymptoms('');
+        setSymptoms("");
       }
     }
   };
@@ -35,6 +22,16 @@ export default function Home() {
     const updatedSymptomList = [...symptomList];
     updatedSymptomList.splice(index, 1);
     setSymptomList(updatedSymptomList);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("/api/gemini", {
+      method: "POST",
+      body: JSON.stringify({ userInput: symptomList.join(", ") }),
+    });
+    const { data } = await response.json();
+    setEstimatedCost(data);
   };
 
   return (
@@ -46,10 +43,19 @@ export default function Home() {
 
       <main className="container mx-auto py-12 px-4">
         <div className="flex justify-center mb-8">
-          <Image src="/Images/Logo.png" alt="MedCost Logo" width={200} height={200} />
+          <Image
+            src="/Images/Logo.png"
+            alt="MedCost Logo"
+            width={200}
+            height={200}
+          />
         </div>
-        <h1 className="text-4xl font-bold mb-2 text-center text-white">MedCost</h1>
-        <p className="text-xl mb-8 text-center text-white">Know Your Health, Plan Your Costs</p>
+        <h1 className="text-4xl font-bold mb-2 text-center text-white">
+          MedCost
+        </h1>
+        <p className="text-xl mb-8 text-center text-white">
+          Know Your Health, Plan Your Costs
+        </p>
         <form onSubmit={handleSubmit} className="mb-8 relative">
           <input
             id="symptoms"
@@ -68,7 +74,9 @@ export default function Home() {
                 onClick={() => removeSymptom(index)}
               >
                 {symptom}
-                <span className="ml-2 text-red-500 font-bold hover:text-white">&#10005;</span>
+                <span className="ml-2 text-red-500 font-bold hover:text-white">
+                  &#10005;
+                </span>
               </span>
             ))}
           </div>
@@ -84,7 +92,9 @@ export default function Home() {
         </div>
         {estimatedCost && (
           <div className="mt-8 bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-2 text-blue-900">Estimated Hospital Cost</h2>
+            <h2 className="text-2xl font-bold mb-2 text-blue-900">
+              Estimated Hospital Cost
+            </h2>
             <p className="text-blue-900 text-xl">{estimatedCost}</p>
           </div>
         )}
