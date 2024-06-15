@@ -36,7 +36,7 @@ export async function POST(req, res) {
           role: "model",
           parts: [
             {
-              text: "I understand. I can help you with that. Please tell me about your symptoms. Be as specific as possible, including the duration, severity, and any other relevant information. \n\nFor example, tell me:\n\n* What are your symptoms?\n* How long have you been experiencing them?\n* How severe are they?\n* Are there any other symptoms you've noticed?\n\nOnce you provide this information, I can help you identify potential diseases, suggest necessary diagnostic tests, and provide cost estimates. \n\n**Remember:** \n\n* I am not a medical professional, and my advice is not a substitute for professional medical consultation. \n* It's crucial to consult a doctor for an accurate diagnosis and treatment plan. \n\nI'm here to assist you, so please don't hesitate to share your concerns. \n",
+              text: "I understand. I can help you with that. Please tell me about your symptoms. Be as specific as possible, including the duration, severity, and any other relevant information. \n\nFor example, tell me:\n\n* What are your symptoms?\n* How long have you been experiencing them?\n* How severe are they?\n* Are there any other symptoms you've noticed?\n\nOnce you provide this information, I can help you identify potential diseases, suggest necessary diagnostic tests, and provide cost estimates. \n\nRemember: \n\n* I am not a medical professional, and my advice is not a substitute for professional medical consultation. \n* It's crucial to consult a doctor for an accurate diagnosis and treatment plan. \n\nI'm here to assist you, so please don't hesitate to share your concerns. \n",
             },
           ],
         },
