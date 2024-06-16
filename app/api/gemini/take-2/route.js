@@ -4,6 +4,8 @@ const { VertexAI } = require("@google-cloud/vertexai");
 
 export async function POST(req, res) {
   const { symptoms, location } = await req.json();
+  // const symptoms = ["vomiting", 'nausea', "headache"]
+  // const location = "33174"
 
   // Initialize Vertex with your Cloud project and location
   const vertex_ai = new VertexAI({
@@ -51,28 +53,13 @@ export async function POST(req, res) {
       },
     ],
     systemInstruction: {
-      parts: [
-        {text: textsi_1},
-        { text: "Instructions:" },
-        { text: "Analyze the given symptoms to identify potential diseases." },
-        {
-          text: "For each potential disease, suggest the necessary diagnostic tests.",
-        },
-        {
-          text: "Provide a list of nearby hospitals that can perform these tests.",
-        },
-        {
-          text: "Include estimated costs for these tests at the specified hospitals.",
-        },
-        { text: "Possible diseases" },
-        { text: "The necessary diagnostic tests." },
-        { text: "Recommended hospitals." },
-        { text: "Estimated costs at those hospitals." },
-        {
-          text: 'Example input\n\n{"Symptoms": ["symptom1","symptom2"], "location": 33174}',
-        },
-        {text: textsi_2}
-      ],
+      parts: [{text: textsi_1}, {"text": `Instructions:`}, 
+      {"text": `Analyze the given symptoms to identify potential diseases.`}, 
+      {"text": `For each potential disease, suggest the necessary diagnostic tests.`}, 
+      {"text": `Provide a list of nearby hospitals that can perform these tests.`}, 
+      {"text": `Include estimated costs for these tests at the specified hospitals.`}, 
+      {text: textsi_2}, {"text": `Possible diseases`}, {"text": `The necessary diagnostic tests.`}, 
+      {"text": `Recommended hospitals.`}, {"text": `Estimated costs at those hospitals.`}, {"text": `Example input {\"Symptoms\": [\"sympton1\",\"sympton2\"], \"location\":ZipCode}`}],
     },
   });
 
