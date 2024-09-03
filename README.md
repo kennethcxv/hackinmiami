@@ -1,7 +1,8 @@
 # MediCost: A HackInMiami 2024 Project
 
-## Demo
-[![MediCost_Demo](https://img.youtube.com/vi/4GSu6jT4AB4/0.jpg)](https://www.youtube.com/watch?v=4GSu6jT4AB4)
+🔗 [DevPost Page](https://devpost.com/software/medic-cost)
+
+📽️ [Youtube Demo](https://www.youtube.com/watch?v=4GSu6jT4AB4)
 
 ## Inspiration
 MediCost was motivated by the stress many patients experience when they are unaware of the potential costs of medical treatments until after receiving care. Our team aimed to develop a solution to provide patients with medical and financial information, promote transparency, and enable informed decision-making.
