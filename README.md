@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MediCost: A HackInMiami 2024 Project
 
-## Getting Started
+## Demo
+[![MediCost_Demo](https://img.youtube.com/vi/4GSu6jT4AB4/0.jpg)](https://www.youtube.com/watch?v=4GSu6jT4AB4)
 
-First, run the development server:
+## Inspiration
+MediCost was motivated by the stress many patients experience when they are unaware of the potential costs of medical treatments until after receiving care. Our team aimed to develop a solution to provide patients with medical and financial information, promote transparency, and enable informed decision-making.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What it does
+MediCost is a user-friendly platform where individuals can enter their symptoms, and they will receive potential diagnoses powered by AI. Additionally, the platform provides estimated treatment costs based on real-world data. This gives users a comprehensive view of their healthcare journey, including financial implications.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How we built it
+MediCost was created using advanced AI algorithms (GeminiAI) for symptom analysis, diagnosis prediction, and estimated treatment cost. The website was developed with Javascript for both the backend and frontend. Figma was used for the website's graphic design, and APIs were incorporated to ensure seamless data integration and user experience.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Challenges we ran into
+One significant challenge we faced was establishing a database to ensure the accuracy of diagnoses. For now, we are utilizing GeminiAI information. However, we understand that for scalability, we will need to integrate various healthcare cost databases for different locations across the country.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Accomplishments that we're proud of
+We are proud to have developed a solution that not only predicts potential diagnoses but also provides transparent cost estimates. We successfully integrated a GeminiAI model with a user-friendly website. We believe that providing users with diagnoses and estimated treatment costs will have a significant impact and help them feel more informed and less anxious about their healthcare decisions.
 
-## Learn More
+## What we learned
+Working on this project has given us significant takeaways, such as the significance of user-centered design in healthcare technology and the need to ensure that the platform is user-friendly. We have also gained valuable insights into the complexities of healthcare data and the effectiveness of AI models like Gemini in developing innovative solutions. Most importantly, we have come to understand the importance of interdisciplinary collaboration among professionals with diverse backgrounds.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## What's next for MediCost
+We plan to incorporate user feedback to continually improve the model's accuracy and platform usability. We also plan to develop partnerships with insurers to offer more personalized cost data.
